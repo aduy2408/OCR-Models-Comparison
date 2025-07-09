@@ -1,0 +1,31 @@
+# Core OCR libraries
+pytesseract>=0.3.10
+easyocr>=1.7.0
+paddlepaddle>=2.4.0
+paddleocr>=2.6.0
+
+# Optional: Google Cloud Vision (requires credentials)
+google-cloud-vision>=3.4.0
+
+# Optional: Kraken (for historical documents)
+kraken>=4.3.0
+
+# Image processing
+Pillow>=9.0.0
+opencv-python>=4.7.0
+
+# Data analysis and visualization
+pandas>=1.5.0
+numpy>=1.21.0
+matplotlib>=3.5.0
+seaborn>=0.11.0
+scikit-learn>=1.1.0
+
+# Jupyter notebook support
+jupyter>=1.0.0
+ipykernel>=6.0.0
+tqdm>=4.64.0
+
+# XML parsing
+lxml>=4.9.0
+beautifulsoup4>=4.11.0
