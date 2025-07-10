@@ -3,35 +3,51 @@
 ## Installation & Usage
 
 ### Requirements
+##### A little warning, try to run easyocr, tesseract, gg cloud once first to see if there are conflicted dependencies. After that install/use doctr and surya one by one, they are all really conflicted with the current dependencies, so watch your for your env. I suggest trying with the notebook file first for easier debugging
+
 ```bash
 pip install easyocr pytesseract google-cloud-vision
 pip install python-doctr[torch]
 pip install surya-ocr
 ```
 
+
 ### Usage Example
 ```python
-# Initialize models
-from complete_ocr_evaluation import initialize_ocr_models, run_single_ocr_evaluation
 
-# Load your samples
-samples = load_your_samples()
+#  REMEMBER TO ADD YOUR GOOGPLE API KEY
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/path/to/your/key.json'
 
-# Run evaluation
+#Load samples
+french_samples = get_french_samples(FRENCH_DATASET_PATH, SAMPLES_PER_DATASET)
+english_samples = get_english_samples(ENGLISH_DATASET_PATH, SAMPLES_PER_DATASET)
+
+all_samples = french_samples + english_samples
+
+#Init ocr models
+initialize_ocr_models()
+
+
+# Run evaluation on your model choice
 results = run_single_ocr_evaluation(samples, 'google_vision')
+
+# Display results
+display_results(results)
 ```
 
 
 ## Project Structure
 
 ```
-├── README.md
-├── OCR_MODELS_COMPARISON.ipynb    # Main Jupyter notebook
-├── complete_ocr_evaluation.py     # Python script version
-├── model_comparison_summary.csv   # Results summary
-└── datasets/
-    ├── English_OCR_dataset/
-    └── French_OCR_dataset/
+├── README.md                           # Project documentation and analysis
+├── combined_ocr_results.json           # Consolidated evaluation results
+├── prototype/
+│   ├── OCR_MODELS_COMPARISON.ipynb     # Main Jupyter notebook
+│   └── complete_ocr_evaluation.py      # Python script version
+├── English_OCR_dataset/
+│   ├── images/                         # English document images
+│   └── annotations/                    # JSON annotation files
+├── French_OCR_dataset/                 # French document images and XML annotations
 ```
 
 
