@@ -1,9 +1,5 @@
 # OCR models comparison
 
-## Project Overview
-
-This project evaluates and compares the performance of 5 different OCR (Optical Character Recognition) models on English and French datasets. The goal is to provide comprehensive analysis of accuracy, speed, multilingual support, ease of integration, cost, and license/infrastructure requirements for each model.
-
 ## Installation & Usage
 
 ### Requirements
@@ -324,14 +320,11 @@ results = run_single_ocr_evaluation(samples, 'google_vision')
 
 **Primary Recommendation: Surya + Tesseract Hybrid Approach**
 
-1. **Surya** for modern OCR with excellent spatial detection and multilingual support
-2. **Tesseract** for high-volume, simple text extraction
-
 ### Reasoning for Hekate Ecosystem
 
 **Business Alignment:**
 - Hekate's mission: "Bringing AI benefits to everyone" - requires cost-effective, scalable solutions
-- Serves diverse clients from government (Da Nang, UNDP) to enterprises
+- Serves diverse clients from government to enterprises
 - Computer Vision services include document classification, OCR with automatic language detection, and face recognition
 - Strategic partnerships enable technology integration and infrastructure support
 - Focus on Vietnamese market with multilingual capabilities
